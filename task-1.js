@@ -19,6 +19,14 @@
 const price = Number(prompt('Доход'))
 const range = prompt('Промежуток времени (month,day,week)')
 
+if(isNaN(price))
+{
+    throw new Error("некректнный ввод дохода") 
+}
+if(range !== 'month' && range !== 'day' && range !== 'week')
+{
+    throw new Error("некректнный ввод времини")
+}
 // TODO добавить проверки валидности данных
 
 const formattedPrice = price.toLocaleString('ru', {
@@ -27,6 +35,20 @@ const formattedPrice = price.toLocaleString('ru', {
 })
 
 // TODO добавить преобразование range в переведенный аналог
+let range_rus;
 
-const result = `${formattedPrice} в ${range}`
+if(range === 'month')
+{
+    range_rus = 'месяц'
+}
+else if(range === 'day')
+{
+    range_rus = 'день'
+}
+else if(range_rus === 'week')
+{
+    range_rus ='неделя'
+}
+
+const result = `${formattedPrice} в ${range_rus}`
 console.log(result)

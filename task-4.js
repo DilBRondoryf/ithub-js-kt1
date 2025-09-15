@@ -16,7 +16,15 @@ const wordLength = word.length // длина слова
 wordLength ** 0.5 // квадратный корень
 Math.pow(wordLength, 0.5) // квадратный корень
 Math.sqrt(wordLength) // квадратный корень
-
-const result = 1 // дописать логику
+let result
+if(Math.trunc(wordLength ** 0.5) === wordLength ** 0.5)
+{
+    result = 1
+}
+else
+{
+    result = 0
+}
+ // дописать логику
 
 console.log(result)

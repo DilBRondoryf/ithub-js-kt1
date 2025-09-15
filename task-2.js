@@ -20,10 +20,25 @@
 const temp = +prompt('Температура')
 const weather = prompt('Погода (clear/cloudy)')
 
+if (isNaN(temp)) {
+    throw new Error("некректнный ввод температуры")
+}
+
+if (weather !== 'clear' && weather !== 'cloudy') {
+    throw new Error("некректнный ввод погоды")
+}
 // TODO добавить проверки валидности данных
 
 let result;
 
+if (temp >= 25 && weather === 'clear') {
+    result = 'golf'
+}
+else if (temp >= 10 && temp <= 25 || weather === 'cloudy') {
+    result = 'bowling'
+}
+else {
+    result = 'hiking'
+}
 // TODO добавить проверки погоды и температуры, обновить result
-
 console.log(result)

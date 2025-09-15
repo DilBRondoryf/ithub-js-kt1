@@ -31,8 +31,35 @@ const sign = prompt('Операция (*/+-)')
 
 // TODO добавить проверки валидности данных
 
+if (isNaN(a)) {
+    throw new Error("некректнный ввод числа")
+}
+if (isNaN(b)) {
+    throw new Error("некректнный ввод числа")
+}
+if(sign !== '*' && sign !== '/' && sign !== '+' && sign !== '-')
+    {
+        throw new Error("некректнный ввод jgthfnjhjd")
+    }
+
 let result
 
+switch (sign){
+    case ('/'):
+        result = a / b
+        break
+
+    case ('*'):
+        result = a * b
+        break
+
+    case ('-'):
+        result = a - b
+        break    
+    case ('+'):
+        result = a + b
+        break        
+}
 // TODO вычислять result через switch
 
 console.log(result)
